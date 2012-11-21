@@ -169,7 +169,12 @@ class MyAdapter extends FragmentPagerAdapter {
         tmpEntries = new ArrayList<String>();
         tmpEntries.add("headset");
         tmpEntries.add("speaker");
-        tmpEntries.add("bluetooth");
+
+        // ToDo: Determine if Bluetooth is supported
+        if (context.getResources().getBoolean(
+                com.android.internal.R.bool.has_bluetooth_chip)) {
+            tmpEntries.add("bluetooth");
+        }
 
         // Determine if WM8994 is supported
         if (WM8994.isSupported(context)) {
