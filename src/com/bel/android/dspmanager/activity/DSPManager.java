@@ -170,9 +170,9 @@ class MyAdapter extends FragmentPagerAdapter {
         tmpEntries.add("headset");
         tmpEntries.add("speaker");
 
-        // ToDo: Determine if Bluetooth is supported
+        // Determine if Bluetooth is supported
         if (context.getResources().getBoolean(
-                com.android.internal.R.bool.has_bluetooth_chip)) {
+                com.android.internal.R.bool.config_deviceHasBluetooth)) {
             tmpEntries.add("bluetooth");
         }
 
